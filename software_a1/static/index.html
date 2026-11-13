@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>三维轨迹控制台 · A1</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%232a477b'/%3E%3Cpath d='m20 8 11 6v13l-11 6-11-6V14zM9 14l11 6 11-6M20 20v13' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script type="importmap">{"imports":{"three":"/static/vendor/three/three.module.js"}}</script>
+  <script type="module" src="/static/main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-icon" aria-hidden="true">A1</div><div><h1>三维轨迹控制台</h1><p>软件应用实践 <span> / </span> 外部程序驱动</p></div></div>
+    <div class="header-right"><span class="tech-label">THREE.JS + PYTHON</span><span class="connection" id="connection" role="status">连接中</span></div>
+  </header>
+  <main>
+    <div id="error-banner" class="error-banner" role="alert" hidden></div>
+    <div class="workspace">
+      <section class="viewport-panel" aria-label="三维场景">
+        <div class="panel-header"><div><span class="eyebrow">LIVE VIEW</span><h2>实时三维场景</h2></div><button id="reset-camera" class="quiet-button" type="button">复位视角</button></div>
+        <div class="canvas-wrap"><canvas id="scene" aria-label="方块在 XZ 平面按外部指令移动的三维场景"></canvas><div class="canvas-legend"><span><i class="swatch cube"></i>移动方块</span><span><i class="swatch route"></i>规划路径</span><span><i class="swatch trail"></i>已走轨迹</span></div><div class="axis-key"><span>X</span><span>Y ↑</span><span>Z</span></div><div class="camera-hint">拖动旋转视角 · 滚轮缩放</div></div>
+        <div class="scene-footer"><span><i class="live-dot"></i><span id="scene-note">等待外部控制程序下发指令</span></span><span>1 场景单位 = 1 m</span></div>
+      </section>
+      <aside class="sidebar">
+        <section class="panel status-panel">
+          <div class="panel-heading"><h2>运动状态</h2><span class="phase" id="phase" role="status">待命</span></div>
+          <div class="command-line"><span>命令编号</span><code id="command-id">—</code></div>
+          <div class="coordinates"><div class="coordinate-head"><span>坐标 / m</span><span>当前位置</span><span>目标位置</span></div><div class="coordinate-row"><span class="axis-x">X</span><strong id="current-x">0.000</strong><span id="target-x">—</span></div><div class="coordinate-row"><span class="axis-y">Y</span><strong id="current-y">0.200</strong><span id="target-y">—</span></div><div class="coordinate-row"><span class="axis-z">Z</span><strong id="current-z">0.000</strong><span id="target-z">—</span></div></div>
+          <div class="measurements"><div><span>指定速度</span><strong id="speed">0.00 <small>m/s</small></strong></div><div><span>运动时间</span><strong id="elapsed">0.00 <small>s</small></strong></div></div>
+          <div class="progress-label"><span>本段进度</span><strong id="progress-value">0%</strong></div><progress id="progress" value="0" max="100" aria-label="当前路段进度"></progress>
+          <div class="controls"><button id="pause" type="button" disabled>暂停</button><button id="resume" type="button" disabled>继续</button><button id="stop" class="stop-button" type="button" disabled>停止</button></div>
+          <p id="pause-reason" class="pause-reason" hidden></p>
+        </section>
+        <section class="panel external-panel"><span class="eyebrow">EXTERNAL CONTROL</span><h2>从外部程序开始</h2><p>保持本页在前台，在第二个终端中运行：</p><div class="command-box"><code>.venv\Scripts\python controller.py</code><button id="copy-command" type="button" aria-label="复制外部控制命令">复制</button></div><p class="helper">先进入 software_a1 目录。路径和每段速度可在配置文件中修改。</p><a class="download-link" href="/api/route/example">下载示例路径 JSON <span aria-hidden="true">↗</span></a></section>
+      </aside>
+      <section class="panel route-panel"><div class="panel-heading"><div><span class="eyebrow">WAYPOINTS</span><h2 id="route-name">方形折线路径</h2></div><span id="route-count" class="muted">4 个路段</span></div><ol id="waypoints" class="waypoints"></ol><p class="route-footnote">逐段直线匀速，到点停止并返回完成回执。</p></section>
+      <section class="panel events-panel"><div class="panel-heading"><div><span class="eyebrow">EVENT LOG</span><h2>事件记录</h2></div><span id="event-count" class="muted">0 条记录</span></div><div class="event-table-wrap"><table><thead><tr><th>时间</th><th>事件</th><th>内容</th></tr></thead><tbody id="events"><tr class="empty-row"><td colspan="3">等待连接与运动指令</td></tr></tbody></table></div></section>
+    </div>
+    <footer class="page-footer"><span>A1 · Three.js 场景与外部驱动</span><span>位置 m <b>·</b> 速度 m/s <b>·</b> Y 轴向上</span></footer>
+  </main>
+</body>
+</html>

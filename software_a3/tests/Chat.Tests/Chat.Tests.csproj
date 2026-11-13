@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Chat.Protocol/Chat.Protocol.csproj" />
+    <ProjectReference Include="../../src/Chat.Server/Chat.Server.csproj" />
+    <ProjectReference Include="../../src/Chat.Client/Chat.Client.csproj" />
+  </ItemGroup>
+</Project>

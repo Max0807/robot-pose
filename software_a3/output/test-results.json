@@ -1,0 +1,166 @@
+{
+  "timeUtc": "2026-11-13T03:39:46.6226972+00:00",
+  "framework": ".NET 10.0.15",
+  "filter": "",
+  "total": 26,
+  "passed": 26,
+  "failed": 0,
+  "results": [
+    {
+      "name": "protocol.utf8_length_and_roundtrip",
+      "passed": true,
+      "milliseconds": 30,
+      "error": null
+    },
+    {
+      "name": "protocol.fragmented_header_body_1",
+      "passed": true,
+      "milliseconds": 0,
+      "error": null
+    },
+    {
+      "name": "protocol.fragmented_header_body_2",
+      "passed": true,
+      "milliseconds": 0,
+      "error": null
+    },
+    {
+      "name": "protocol.fragmented_header_body_3",
+      "passed": true,
+      "milliseconds": 0,
+      "error": null
+    },
+    {
+      "name": "protocol.fragmented_header_body_7",
+      "passed": true,
+      "milliseconds": 0,
+      "error": null
+    },
+    {
+      "name": "protocol.coalesced_frames",
+      "passed": true,
+      "milliseconds": 3,
+      "error": null
+    },
+    {
+      "name": "protocol.clean_eof",
+      "passed": true,
+      "milliseconds": 0,
+      "error": null
+    },
+    {
+      "name": "protocol.truncated_header_and_body",
+      "passed": true,
+      "milliseconds": 4,
+      "error": null
+    },
+    {
+      "name": "protocol.reject_invalid_frame_lengths",
+      "passed": true,
+      "milliseconds": 1,
+      "error": null
+    },
+    {
+      "name": "protocol.reject_invalid_json_fields",
+      "passed": true,
+      "milliseconds": 3,
+      "error": null
+    },
+    {
+      "name": "protocol.content_limit_and_unicode",
+      "passed": true,
+      "milliseconds": 3,
+      "error": null
+    },
+    {
+      "name": "connection.serialize_concurrent_writes",
+      "passed": true,
+      "milliseconds": 334,
+      "error": null
+    },
+    {
+      "name": "connection.partial_write_closes_transport",
+      "passed": true,
+      "milliseconds": 1,
+      "error": null
+    },
+    {
+      "name": "connection.cancel_waiting_writer_preserves_transport",
+      "passed": true,
+      "milliseconds": 7,
+      "error": null
+    },
+    {
+      "name": "connection.cancel_started_write_closes_transport",
+      "passed": true,
+      "milliseconds": 0,
+      "error": null
+    },
+    {
+      "name": "network.bidirectional_utf8_and_online_list",
+      "passed": true,
+      "milliseconds": 26,
+      "error": null
+    },
+    {
+      "name": "network.many_senders_one_recipient",
+      "passed": true,
+      "milliseconds": 6,
+      "error": null
+    },
+    {
+      "name": "network.duplicate_name_keeps_original_session",
+      "passed": true,
+      "milliseconds": 2,
+      "error": null
+    },
+    {
+      "name": "network.offline_error_does_not_disconnect_sender",
+      "passed": true,
+      "milliseconds": 1,
+      "error": null
+    },
+    {
+      "name": "network.registration_required_and_bound_sender",
+      "passed": true,
+      "milliseconds": 4,
+      "error": null
+    },
+    {
+      "name": "network.malformed_peer_isolated",
+      "passed": true,
+      "milliseconds": 2,
+      "error": null
+    },
+    {
+      "name": "network.registration_timeout_and_half_frame",
+      "passed": true,
+      "milliseconds": 159,
+      "error": null
+    },
+    {
+      "name": "network.single_reader_and_cancelled_read",
+      "passed": true,
+      "milliseconds": 1,
+      "error": null
+    },
+    {
+      "name": "network.disconnect_cleanup_and_reconnect",
+      "passed": true,
+      "milliseconds": 30,
+      "error": null
+    },
+    {
+      "name": "network.server_shutdown_releases_all_connections",
+      "passed": true,
+      "milliseconds": 1,
+      "error": null
+    },
+    {
+      "name": "process.three_real_clients_and_server_shutdown",
+      "passed": true,
+      "milliseconds": 454,
+      "error": null
+    }
+  ]
+}

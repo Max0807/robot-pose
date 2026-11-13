@@ -1,0 +1,7 @@
+{
+  "name": "software-a1-threejs-control",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test tests/motion.test.mjs" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

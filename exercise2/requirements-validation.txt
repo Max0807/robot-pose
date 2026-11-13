@@ -1,0 +1,2 @@
+# Optional: only used by tests/test_scipy_reference.py, not by main.py.
+scipy>=1.10,<2.0

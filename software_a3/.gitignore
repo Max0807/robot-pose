@@ -1,0 +1,7 @@
+.dotnet/
+.cli-home/
+.nuget/
+.cache/
+**/bin/
+**/obj/
+.vs/

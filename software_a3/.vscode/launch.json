@@ -1,0 +1,95 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "A3：调试服务器",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "A3：编译 C# 项目",
+      "program": "${workspaceFolder}/.dotnet/dotnet.exe",
+      "args": [
+        "${workspaceFolder}/src/Chat.Server/bin/Debug/net10.0/Chat.Server.dll",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9000"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "env": {
+        "DOTNET_ROOT": "${workspaceFolder}/.dotnet",
+        "A3_DOTNET_PATH": "${workspaceFolder}/.dotnet/dotnet.exe"
+      }
+    },
+    {
+      "name": "A3：调试 Alice 客户端",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "A3：编译 C# 项目",
+      "program": "${workspaceFolder}/.dotnet/dotnet.exe",
+      "args": [
+        "${workspaceFolder}/src/Chat.Client/bin/Debug/net10.0/Chat.Client.dll",
+        "--name",
+        "Alice",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9000"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "env": {
+        "DOTNET_ROOT": "${workspaceFolder}/.dotnet",
+        "A3_DOTNET_PATH": "${workspaceFolder}/.dotnet/dotnet.exe"
+      }
+    },
+    {
+      "name": "A3：调试 Bob 客户端",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "A3：编译 C# 项目",
+      "program": "${workspaceFolder}/.dotnet/dotnet.exe",
+      "args": [
+        "${workspaceFolder}/src/Chat.Client/bin/Debug/net10.0/Chat.Client.dll",
+        "--name",
+        "Bob",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9000"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "env": {
+        "DOTNET_ROOT": "${workspaceFolder}/.dotnet",
+        "A3_DOTNET_PATH": "${workspaceFolder}/.dotnet/dotnet.exe"
+      }
+    },
+    {
+      "name": "A3：调试自动测试",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "A3：编译 C# 项目",
+      "program": "${workspaceFolder}/.dotnet/dotnet.exe",
+      "args": [
+        "${workspaceFolder}/tests/Chat.Tests/bin/Debug/net10.0/Chat.Tests.dll",
+        "--output-dir",
+        "${workspaceFolder}/output"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "env": {
+        "DOTNET_ROOT": "${workspaceFolder}/.dotnet",
+        "A3_DOTNET_PATH": "${workspaceFolder}/.dotnet/dotnet.exe"
+      }
+    }
+  ]
+}

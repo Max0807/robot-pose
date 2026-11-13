@@ -1,0 +1,164 @@
+{
+  "exercise": "A1",
+  "status": "completed",
+  "commands": [
+    {
+      "command_id": "161194cd3c37-001",
+      "target": {
+        "x": 2.0,
+        "y": 0.2,
+        "z": 0.0
+      },
+      "speed": 0.8,
+      "start": {
+        "x": 0.0,
+        "y": 0.2,
+        "z": 0.0
+      },
+      "position": {
+        "x": 2.0,
+        "y": 0.2,
+        "z": 0.0
+      },
+      "status": "arrived",
+      "distance_m": 2.0,
+      "expected_motion_s": 2.5,
+      "motion_elapsed_s": 2.5000000000000013,
+      "accepted_at": 1794537382.0046089,
+      "reason": "",
+      "finished_at": 1794537384.5373614,
+      "controller_wall_elapsed_s": 2.5629999998491257
+    },
+    {
+      "command_id": "161194cd3c37-002",
+      "target": {
+        "x": 2.0,
+        "y": 0.2,
+        "z": 2.0
+      },
+      "speed": 1.0,
+      "start": {
+        "x": 2.0,
+        "y": 0.2,
+        "z": 0.0
+      },
+      "position": {
+        "x": 2.0,
+        "y": 0.2,
+        "z": 2.0
+      },
+      "status": "arrived",
+      "distance_m": 2.0,
+      "expected_motion_s": 2.0,
+      "motion_elapsed_s": 2.0,
+      "accepted_at": 1794537384.56741,
+      "reason": "",
+      "finished_at": 1794537386.5747147,
+      "controller_wall_elapsed_s": 2.030999999959022
+    },
+    {
+      "command_id": "161194cd3c37-003",
+      "target": {
+        "x": 0.0,
+        "y": 0.2,
+        "z": 2.0
+      },
+      "speed": 0.8,
+      "start": {
+        "x": 2.0,
+        "y": 0.2,
+        "z": 2.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.2,
+        "z": 2.0
+      },
+      "status": "arrived",
+      "distance_m": 2.0,
+      "expected_motion_s": 2.5,
+      "motion_elapsed_s": 2.499999999999999,
+      "accepted_at": 1794537386.607291,
+      "reason": "",
+      "finished_at": 1794537389.1117187,
+      "controller_wall_elapsed_s": 2.5
+    },
+    {
+      "command_id": "161194cd3c37-004",
+      "target": {
+        "x": 0.0,
+        "y": 0.2,
+        "z": 0.0
+      },
+      "speed": 1.0,
+      "start": {
+        "x": 0.0,
+        "y": 0.2,
+        "z": 2.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.2,
+        "z": 0.0
+      },
+      "status": "arrived",
+      "distance_m": 2.0,
+      "expected_motion_s": 2.0,
+      "motion_elapsed_s": 2.000000000000003,
+      "accepted_at": 1794537389.118891,
+      "reason": "",
+      "finished_at": 1794537391.124324,
+      "controller_wall_elapsed_s": 2.030999999959022
+    }
+  ],
+  "active_command_id": null,
+  "route": {
+    "name": "方形折线路径",
+    "initial_position": {
+      "x": 0.0,
+      "y": 0.2,
+      "z": 0.0
+    },
+    "segments": [
+      {
+        "target": {
+          "x": 2.0,
+          "y": 0.2,
+          "z": 0.0
+        },
+        "speed": 0.8
+      },
+      {
+        "target": {
+          "x": 2.0,
+          "y": 0.2,
+          "z": 2.0
+        },
+        "speed": 1.0
+      },
+      {
+        "target": {
+          "x": 0.0,
+          "y": 0.2,
+          "z": 2.0
+        },
+        "speed": 0.8
+      },
+      {
+        "target": {
+          "x": 0.0,
+          "y": 0.2,
+          "z": 0.0
+        },
+        "speed": 1.0
+      }
+    ]
+  },
+  "started_at": 1794537382.0035906,
+  "final_position": {
+    "x": 0.0,
+    "y": 0.2,
+    "z": 0.0
+  },
+  "finished_at": 1794537391.1411934
+}

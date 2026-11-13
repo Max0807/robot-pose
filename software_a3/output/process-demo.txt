@@ -1,0 +1,51 @@
+[server] READY host=127.0.0.1 port=52963
+[server] 服务器已启动。输入 /quit 或按 Ctrl+C 正常退出。
+[server] ONLINE Bob
+[server] ONLINE Alice
+[server] ONLINE Carol
+[Alice] REGISTERED user=Alice
+[Alice] 命令：/msg Bob 你好 | /users | /quit | /help；启动：--name Alice --host 127.0.0.1 --port 9000
+[Bob] REGISTERED user=Bob
+[Carol] REGISTERED user=Carol
+[Bob] 命令：/msg Bob 你好 | /users | /quit | /help；启动：--name Alice --host 127.0.0.1 --port 9000
+[Carol] 命令：/msg Bob 你好 | /users | /quit | /help；启动：--name Alice --host 127.0.0.1 --port 9000
+[Alice:input] /msg Bob 你好 Bob，来自 Alice 🙂
+[Alice] [已提交] id=b355ef11a2b04ddfae73ab1f568337f3
+[server] FORWARD Alice -> Bob id=b355ef11a2b04ddfae73ab1f568337f3 bytes=30
+[Alice] [已转发] Bob id=b355ef11a2b04ddfae73ab1f568337f3
+[Bob] [Alice] 你好 Bob，来自 Alice 🙂
+[Bob:input] /msg Alice 已收到，双向通信成功
+[Bob] [已提交] id=a14e77c4b1e544fdb19243319c757ef5
+[Alice] [Bob] 已收到，双向通信成功
+[server] FORWARD Bob -> Alice id=a14e77c4b1e544fdb19243319c757ef5 bytes=30
+[Bob] [已转发] Alice id=a14e77c4b1e544fdb19243319c757ef5
+[Carol:input] /msg Bob 第三个客户端也能转发
+[Carol] [已提交] id=ee8af33278a74200aff54d8233b160da
+[server] FORWARD Carol -> Bob id=ee8af33278a74200aff54d8233b160da bytes=30
+[Bob] [Carol] 第三个客户端也能转发
+[Alice:input] /users
+[Carol] [已转发] Bob id=ee8af33278a74200aff54d8233b160da
+[Alice] [在线用户] Alice, Bob, Carol
+[Alice:input] /msg Nobody 不在线的用户
+[Alice] [已提交] id=d283429383534d17b0ba55e3184f8bef
+[Alice] [服务器提示] recipient_offline: 接收方不在线。
+[Alice:input] /msg Bob
+[Alice] [输入错误] 格式：/msg Bob 你好
+[duplicate:stderr] 连接 / 运行失败：name_in_use: 用户名已在线，大小写不区分。
+[Alice:input] /users
+[Alice] [在线用户] Alice, Bob, Carol
+[Bob:input] /quit
+[server] OFFLINE Bob
+[Bob] [连接] 服务器已关闭连接。
+[Bob] BYE 客户端已退出。
+[Alice:input] /msg Bob 退出后再发送
+[Alice] [已提交] id=04734dd5029b45f7a126e4f68ec92d1e
+[Alice] [服务器提示] recipient_offline: 接收方不在线。
+[server:input] /quit
+[Alice] [连接] 服务器已关闭连接。
+[Alice] BYE 客户端已退出。
+[Carol] [连接] 服务器已关闭连接。
+[Carol] BYE 客户端已退出。
+[server] OFFLINE Alice
+[server] OFFLINE Carol
+[server] STOPPED 服务器已关闭，连接已释放。

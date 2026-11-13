@@ -1,0 +1,205 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "A1：启动三维服务",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/software_a1/.venv/Scripts/python.exe",
+      "program": "${workspaceFolder}/software_a1/server.py",
+      "cwd": "${workspaceFolder}/software_a1",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "A1：调试外部控制脚本",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/software_a1/.venv/Scripts/python.exe",
+      "program": "${workspaceFolder}/software_a1/controller.py",
+      "cwd": "${workspaceFolder}/software_a1",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "A1：运行 Python 测试",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/software_a1/.venv/Scripts/python.exe",
+      "module": "unittest",
+      "args": [
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}/software_a1",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "第1题：调试计算过程",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercise1/main.py",
+      "cwd": "${workspaceFolder}/exercise1",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "第2题：调试正解与下料",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercise2/main.py",
+      "cwd": "${workspaceFolder}/exercise2",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "第3题：调试视觉定位与抓取",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercise3/main.py",
+      "cwd": "${workspaceFolder}/exercise3",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "第1题：运行全部单元测试",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "unittest",
+      "args": [
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}/exercise1",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "第2题：运行全部单元测试",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "unittest",
+      "args": [
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}/exercise2",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "第3题：运行全部单元测试",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "unittest",
+      "args": [
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}/exercise3",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "A3：调试服务器",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "A3：编译 C# 项目",
+      "program": "${workspaceFolder}/software_a3/.dotnet/dotnet.exe",
+      "args": [
+        "${workspaceFolder}/software_a3/src/Chat.Server/bin/Debug/net10.0/Chat.Server.dll",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9000"
+      ],
+      "cwd": "${workspaceFolder}/software_a3",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "env": {
+        "DOTNET_ROOT": "${workspaceFolder}/software_a3/.dotnet",
+        "A3_DOTNET_PATH": "${workspaceFolder}/software_a3/.dotnet/dotnet.exe"
+      }
+    },
+    {
+      "name": "A3：调试 Alice 客户端",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "A3：编译 C# 项目",
+      "program": "${workspaceFolder}/software_a3/.dotnet/dotnet.exe",
+      "args": [
+        "${workspaceFolder}/software_a3/src/Chat.Client/bin/Debug/net10.0/Chat.Client.dll",
+        "--name",
+        "Alice",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9000"
+      ],
+      "cwd": "${workspaceFolder}/software_a3",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "env": {
+        "DOTNET_ROOT": "${workspaceFolder}/software_a3/.dotnet",
+        "A3_DOTNET_PATH": "${workspaceFolder}/software_a3/.dotnet/dotnet.exe"
+      }
+    },
+    {
+      "name": "A3：调试 Bob 客户端",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "A3：编译 C# 项目",
+      "program": "${workspaceFolder}/software_a3/.dotnet/dotnet.exe",
+      "args": [
+        "${workspaceFolder}/software_a3/src/Chat.Client/bin/Debug/net10.0/Chat.Client.dll",
+        "--name",
+        "Bob",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9000"
+      ],
+      "cwd": "${workspaceFolder}/software_a3",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "env": {
+        "DOTNET_ROOT": "${workspaceFolder}/software_a3/.dotnet",
+        "A3_DOTNET_PATH": "${workspaceFolder}/software_a3/.dotnet/dotnet.exe"
+      }
+    },
+    {
+      "name": "A3：调试自动测试",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "A3：编译 C# 项目",
+      "program": "${workspaceFolder}/software_a3/.dotnet/dotnet.exe",
+      "args": [
+        "${workspaceFolder}/software_a3/tests/Chat.Tests/bin/Debug/net10.0/Chat.Tests.dll",
+        "--output-dir",
+        "${workspaceFolder}/software_a3/output"
+      ],
+      "cwd": "${workspaceFolder}/software_a3",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "env": {
+        "DOTNET_ROOT": "${workspaceFolder}/software_a3/.dotnet",
+        "A3_DOTNET_PATH": "${workspaceFolder}/software_a3/.dotnet/dotnet.exe"
+      }
+    }
+  ]
+}
