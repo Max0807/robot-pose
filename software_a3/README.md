@@ -181,6 +181,9 @@ TCP 提供有序的**字节流**，一次发送不能对应为接收方一次读
 - `test-results.txt`、`test-results.json`：最近一次完整测试的实际结果。
 - `test-results-filtered.*`：筛选运行的结果，不覆盖完整报告。
 - `process-demo.txt`：真实服务器 / 客户端进程的输入和输出，不是手工编写的示例。
+- [example.png](output/example.png)：多客户端聊天运行示例截图。
+
+![软件 A3 多客户端聊天运行示例](output/example.png)
 
 完整运行应显示 `总计 26，通过 26，失败 0`。退出码 0 表示成功，1 表示测试 / 运行失败，测试命令参数错误返回 2。
 

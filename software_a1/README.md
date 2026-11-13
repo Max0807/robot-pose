@@ -266,7 +266,8 @@ F5 继续，F10 执行一行，F11 进入函数。
 
 | 文件 | 含义 |
 | --- | --- |
-| [output/last_run.json](output/last_run.json) | 外部控制程序实际执行报告，含每段目标、速度、运动时间、状态与最终位置 |
+| [output/process.mp4](output/process.mp4) | 运行过程演示视频，点击链接观看或下载 |
+| [output/last_run.json](output/last_run.json) | 外部控制程序实际执行报告，题目标识为 `"robot": "A1"`，含每段目标、速度、运动时间、状态与最终位置 |
 | [output/controller-demo.txt](output/controller-demo.txt) | 浏览器集成验收时真实控制脚本的输出 |
 | [output/browser_check.json](output/browser_check.json) | 实际浏览器检查结果 |
 | [output/preview-moving.png](output/preview-moving.png) | 外部指令执行过程截图 |

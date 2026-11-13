@@ -43,6 +43,7 @@ class ControllerTests(unittest.TestCase):
                                      capture_output=True, text=True, encoding='utf-8')
             self.assertEqual(process.returncode, 1)
             result = json.loads((Path(directory) / 'output/last_run.json').read_text(encoding='utf-8'))
+            self.assertEqual(result['robot'], 'A1')
             self.assertEqual(result['status'], 'failed')
             self.assertEqual(result['commands'], [])
 

@@ -6,60 +6,13 @@
 
 | 题目 | 独立目录 | 运行入口 | 推导与调试说明 | 实际结果 |
 | --- | --- | --- | --- | --- |
-| 机器人 B1 | `exercise1` | [main.py](exercise1/main.py) | [第一题 README](exercise1/README.md) | [文本结果](exercise1/output/exercise1.txt) |
-| 机器人 B2 | `exercise2` | [main.py](exercise2/main.py) | [第二题 README](exercise2/README.md) | [文本结果](exercise2/output/exercise2.txt) |
-| 机器人 B3 | `exercise3` | [main.py](exercise3/main.py) | [第三题 README](exercise3/README.md) | [文本结果](exercise3/output/exercise3.txt) |
-| 软件 A1 | `software_a1` | [server.py](software_a1/server.py) + [controller.py](software_a1/controller.py) | [文件作用、运行与调试](software_a1/README.md) | [实际执行记录](software_a1/output/last_run.json) |
-| 软件 A3 | `software_a3` | [C# 服务器](software_a3/src/Chat.Server/Program.cs) + [C# 客户端](software_a3/src/Chat.Client/Program.cs) | [协议、文件作用、运行与调试](software_a3/README.md) | [自动测试](software_a3/output/test-results.txt)、[实际聊天记录](software_a3/output/process-demo.txt) |
+| 机器人 B1 | `robot1` | [main.py](robot1/main.py) | [第一题 README](robot1/README.md) | [文本结果](robot1/output/robot1.txt) |
+| 机器人 B2 | `robot2` | [main.py](robot2/main.py) | [第二题 README](robot2/README.md) | [文本结果](robot2/output/robot2.txt) |
+| 机器人 B3 | `robot3` | [main.py](robot3/main.py) | [第三题 README](robot3/README.md) | [文本结果](robot3/output/robot3.txt) |
+| 软件 A1 | `software_a1` | [server.py](software_a1/server.py) + [controller.py](software_a1/controller.py) | [文件作用、运行与调试](software_a1/README.md) | [实际执行记录](software_a1/output/last_run.json)、[演示视频](software_a1/output/process.mp4) |
+| 软件 A3 | `software_a3` | [C# 服务器](software_a3/src/Chat.Server/Program.cs) + [C# 客户端](software_a3/src/Chat.Client/Program.cs) | [协议、文件作用、运行与调试](software_a3/README.md) | [自动测试](software_a3/output/test-results.txt)、[实际聊天记录](software_a3/output/process-demo.txt)、[运行示例截图](software_a3/output/example.png) |
 
-## 第一题
-
-已知工件位姿和夹爪安装关系，反求法兰位姿。
-
-```powershell
-Set-Location 'D:\GithubCode\robot-pose\exercise1'
-python main.py
-python -m unittest discover -s tests -v
-```
-
-结果保存在 `exercise1/output/exercise1.txt` 和 `exercise1/output/exercise1.json`。
-
-## 第二题
-
-已知法兰位姿和安装链，求 TCP、工件位姿，合并固定链，恢复当前法兰，并反求下料法兰目标。
-
-```powershell
-Set-Location 'D:\GithubCode\robot-pose\exercise2'
-python main.py
-python -m unittest discover -s tests -v
-```
-
-结果保存在 `exercise2/output/exercise2.txt` 和 `exercise2/output/exercise2.json`。
-
-## 第三题
-
-使用给定像素、轴向深度、相机内参和眼在手外外参，求圆盘中心与抓取法兰目标，并验证重投影和抓取回代。
-
-```powershell
-Set-Location 'D:\GithubCode\robot-pose\exercise3'
-python main.py
-python -m unittest discover -s tests -v
-```
-
-结果保存在 `exercise3/output/exercise3.txt` 和 `exercise3/output/exercise3.json`。
-
-## 从总目录直接运行
-
-此处三个计算入口对应机器人 B1 / B2 / B3：
-
-```powershell
-Set-Location 'D:\GithubCode\robot-pose'
-python .\exercise1\main.py
-python .\exercise2\main.py
-python .\exercise3\main.py
-```
-
-默认输出目录按各自 `main.py` 的实际位置确定，与终端当前目录无关。三题使用不同结果文件名，输出不会相互覆盖。
+三道机器人题的模块、类、函数和结果文件统一使用 `robot` / `Robot` 命名。三题结果及软件 A1 的 JSON 报告使用 `robot` 字段标识题目，题号值保留 `B1`、`B2`、`B3`、`A1`。
 
 ## 软件 A1：三维场景与外部驱动
 
@@ -78,7 +31,7 @@ Set-Location 'D:\GithubCode\robot-pose\software_a1'
 
 首次安装、路径配置、各个代码文件的重要内容，以及测试和调试见 [A1 说明](software_a1/README.md)。本题使用自己的 `.venv` 和 `output`，Three.js 资源保存在本地。
 
-测试应分别进入对应题目的目录运行。各题内的 `robot_pose` 和 `tests` 是各自独立的模块，不在同一 Python 进程中混合导入。数学模块在每题中各保留一份，任何一题都可以单独复制、运行和提交。
+运行演示：[观看 process.mp4 视频](software_a1/output/process.mp4)。
 
 ## 调试与依赖
 
@@ -126,3 +79,49 @@ Set-Location 'D:\GithubCode\robot-pose\software_a3'
 上述三行分别在三个终端运行，不是在一个终端依次执行。Alice 中输入 `/msg Bob 你好`，Bob 中输入 `/msg Alice 收到`，`/users` 查询在线用户，`/quit` 退出。
 
 完整的首次安装、协议设计、每个文件的重要内容和调试步骤见 [A3 说明](software_a3/README.md)。26 项测试覆盖分包、连续帧、多客户端并发、异常连接及真实控制台进程的聊天和退出。测试与聊天记录保存在 `software_a3/output`。
+
+运行示例截图：
+
+![软件 A3 多客户端聊天运行示例](software_a3/output/example.png)
+
+## 机器人B1：已知工件位姿和夹爪安装关系，反求法兰位姿。
+
+```powershell
+cd D:\GithubCode\robot-pose\robot1
+python main.py
+```
+
+结果保存在 `robot1/output/robot1.txt` 和 `robot1/output/robot1.json`。
+
+## 机器人B2：已知法兰位姿和安装链，求 TCP、工件位姿，合并固定链，恢复当前法兰，并反求下料法兰目标。
+
+```powershell
+cd D:\GithubCode\robot-pose\robot2
+python main.py
+```
+
+结果保存在 `robot2/output/robot2.txt` 和 `robot2/output/robot2.json`。
+
+## 机器人B3：已知工件位姿、抓取法兰、抓取目标、视觉定位、视觉回代、视觉抓取、视觉下料，求抓取目标、下料目标。
+
+```powershell
+Set-Location 'D:\GithubCode\robot-pose\robot3'
+python main.py
+python -m unittest discover -s tests -v
+```
+
+结果保存在 `robot3/output/robot3.txt` 和 `robot3/output/robot3.json`。
+
+## 从总目录直接运行
+
+此处三个计算入口对应机器人 B1 / B2 / B3：
+
+```powershell
+cd D:\GithubCode\robot-pose
+python .\robot1\main.py
+python .\robot2\main.py
+python .\robot3\main.py
+```
+
+默认输出目录按各自 `main.py` 的实际位置确定，与终端当前目录无关。三题使用不同结果文件名，输出不会相互覆盖。
+

@@ -43,8 +43,8 @@
       "name": "第1题：调试计算过程",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercise1/main.py",
-      "cwd": "${workspaceFolder}/exercise1",
+      "program": "${workspaceFolder}/robot1/main.py",
+      "cwd": "${workspaceFolder}/robot1",
       "console": "integratedTerminal",
       "justMyCode": true
     },
@@ -52,8 +52,8 @@
       "name": "第2题：调试正解与下料",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercise2/main.py",
-      "cwd": "${workspaceFolder}/exercise2",
+      "program": "${workspaceFolder}/robot2/main.py",
+      "cwd": "${workspaceFolder}/robot2",
       "console": "integratedTerminal",
       "justMyCode": true
     },
@@ -61,8 +61,8 @@
       "name": "第3题：调试视觉定位与抓取",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/exercise3/main.py",
-      "cwd": "${workspaceFolder}/exercise3",
+      "program": "${workspaceFolder}/robot3/main.py",
+      "cwd": "${workspaceFolder}/robot3",
       "console": "integratedTerminal",
       "justMyCode": true
     },
@@ -77,7 +77,7 @@
         "tests",
         "-v"
       ],
-      "cwd": "${workspaceFolder}/exercise1",
+      "cwd": "${workspaceFolder}/robot1",
       "console": "integratedTerminal",
       "justMyCode": true
     },
@@ -92,7 +92,7 @@
         "tests",
         "-v"
       ],
-      "cwd": "${workspaceFolder}/exercise2",
+      "cwd": "${workspaceFolder}/robot2",
       "console": "integratedTerminal",
       "justMyCode": true
     },
@@ -107,7 +107,7 @@
         "tests",
         "-v"
       ],
-      "cwd": "${workspaceFolder}/exercise3",
+      "cwd": "${workspaceFolder}/robot3",
       "console": "integratedTerminal",
       "justMyCode": true
     },

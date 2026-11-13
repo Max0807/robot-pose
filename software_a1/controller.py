@@ -96,7 +96,7 @@ def main() -> int:
     args = parser.parse_args()
     if not all(math.isfinite(value) and value > 0 for value in (args.timeout, args.speed_scale)):
         parser.error("timeout 和 speed-scale 必须有限且大于零")
-    report = {"exercise": "A1", "status": "not_started", "commands": [], "active_command_id": None}
+    report = {"robot": "A1", "status": "not_started", "commands": [], "active_command_id": None}
     try:
         run_route(args.url, args.path, args.timeout, args.speed_scale, report)
     except (ControlError, ValueError, OSError, KeyboardInterrupt) as error:
